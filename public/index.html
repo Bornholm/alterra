@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="vendor/leaflet/dist/leaflet.css" />
+    <style>
+      html, body, #map {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      #map {
+        display: block;
+        margin: auto;
+        width: 640px;
+        height: 480px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map">
+    </div>
+    <script src="vendor/leaflet/dist/leaflet.js"></script>
+    <script type="text/javascript">
+
+      var map = L.map('map', {
+        crs: L.CRS.Simple
+      }).setView([0, 0], 18);
+
+      L.tileLayer('tiles/{x}/{y}', {
+        attribution: '&copy;',
+        tileSize: 16,
+        minZoom: 18,
+        maxZoom: 18,
+        reuseTiles: true
+      }).addTo(map);
+
+    </script>
+  </body>
+</html>
